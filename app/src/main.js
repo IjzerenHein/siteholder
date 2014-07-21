@@ -1,31 +1,26 @@
 /* globals define */
 define(function(require, exports, module) {
     'use strict';
+
     // import dependencies
     var Engine = require('famous/core/Engine');
-    var Modifier = require('famous/core/Modifier');
-    var Transform = require('famous/core/Transform');
-    var ImageSurface = require('famous/surfaces/ImageSurface');
+    var Surface = require('famous/core/Surface');
+    var Road = require('./Road');
 
     // create the main context
     var mainContext = Engine.createContext();
 
-    // your app here
-    mainContext.setPerspective(1000);
+    // Set main perspective
+    mainContext.setPerspective(2000);
 
-    var logo = new ImageSurface({
-        size: [200, 200],
-        content: '/content/images/famous_logo.png',
-        classes: ['backfaceVisibility']
+    // add road
+    var road = new Road();
+    mainContext.add(road);
+
+    // add title
+    var title = new Surface({
+        content: 'This domain is reserved for<br><b>future projects</b><div class="subTitle">If you are interested in this domain, make a fair offer and let <a href="mailto:hrutjes@gmail.com">me</a> know what you intend to use it for.</div>',
+        classes: ['title']
     });
-
-    var initialTime = Date.now();
-    var centerSpinModifier = new Modifier({
-        origin: [0.5, 0.5],
-        transform : function() {
-            return Transform.rotateY(.002 * (Date.now() - initialTime));
-        }
-    });
-
-    mainContext.add(centerSpinModifier).add(logo);
+    mainContext.add(title);
 });

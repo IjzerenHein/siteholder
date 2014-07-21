@@ -38,12 +38,17 @@ module.exports = function (grunt) {
     'jscs',
     'eslint'
   ]);
-  
+
   grunt.registerTask('test', [
     'lint'
   ]);
 
   grunt.registerTask('default', [
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'ftp-deploy'
   ]);
 };

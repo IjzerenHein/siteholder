@@ -1,8 +1,44 @@
 html {
-  background: #fff;
+  background: #000;
 }
 
 .backfaceVisibility {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
+}
+
+.title {
+    font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 30px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+.title b {
+    letter-spacing: -1px;
+}
+
+.subTitle {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: white;
+    text-align: center;
+    letter-spacing: 0px;
+    font-size: 18px;
+    padding: 20px;
+    text-transform: none;
+}
+.subTitle a {
+    text-decoration: none;
+    color: #1F72FF;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.road {
+    background-color: white;
+    box-shadow: 0px 0px 1px #fff;
+    border-radius: 1px;
 }
